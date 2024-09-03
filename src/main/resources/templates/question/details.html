@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Question Details</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1 th:text="${question.subject}">제목이 여기에 표시됩니다</h1>
+
+<div>
+    <p><strong>내용:</strong> <span th:text="${question.content}">질문 내용이 여기에 표시됩니다</span></p>
+</div>
+
+<div>
+    <p><strong>생성일:</strong> <span th:text="${question.createDate}">2024-01-01 12:00:00</span></p>
+</div>
+
+<div>
+    <h2>답변들</h2>
+    <ul>
+        <li th:each="answer : ${question.answers}">
+            <p th:text="${answer.content}">답변 내용이 여기에 표시됩니다</p>
+            <p th:text="${answer.createDate}">답변 생성일이 여기에 표시됩니다</p>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
