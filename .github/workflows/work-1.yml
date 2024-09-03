@@ -22,4 +22,5 @@ jobs:
           tag_name: ${{ steps.create_tag.outputs.new_tag }}
           release_name: Release ${{ steps.create_tag.outputs.new_tag }}
           body: ${{ steps.create_tag.outputs.changelog }}
-          draft:falseprerelease:false
+          draft:false
+          prerelease:false
